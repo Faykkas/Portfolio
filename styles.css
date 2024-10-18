@@ -1,0 +1,208 @@
+:root {
+    --clr-lenses-100: #1c1c1c;
+    --clr-lenses-200: #2b040e;
+    --clr-oak-100: #754414;
+    --clr-oak-200: #995D27;
+    --clr-oak-300: #A37236;
+    --clr-oak-400: #B0864C;
+    --clr-background-light: #fdfdfd;
+    --clr-shadow: rgba(0, 0, 0, 0.1);
+    --clr-primary: #754414;
+    --clr-secondary: #A37236;
+}
+
+/* Général */
+body {
+    background-color: var(--clr-lenses-100);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--clr-lenses-200);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenu principal */
+.container {
+    background-color: var(--clr-background-light);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--clr-shadow);
+}
+
+/* Navigation */
+nav.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+nav a.nav-link {
+    color: var(--clr-lenses-100);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a.nav-link:hover {
+    color: var(--clr-oak-100);
+}
+
+/* Header et intro */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Styles spécifiques pour le h2 animé de l'intro */
+.intro-text h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro-text h2.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Titres principaux (autres que ceux de l'intro) */
+h2:not(.intro-text h2) {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: var(--clr-primary);
+    text-align: center;
+    position: relative;
+}
+
+/* Ajouter la barre uniquement pour les h2 autres que ceux de l'intro */
+h2:not(.intro-text h2)::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: var(--clr-oak-100);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+/* Réseaux sociaux */
+.reseaux img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s;
+    filter: grayscale(100%);
+}
+
+.reseaux img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* À propos */
+#About p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Mes compétences */
+/* Conteneur de la barre de progression */
+.progress-bar-container {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    margin: 10px auto;
+    width: 80%;
+    height: 20px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Barre de progression */
+.progress-bar {
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--clr-oak-100);
+    width: 0%; /* Commence à 0% pour l'animation */
+    transition: width 1.5s ease-in-out;
+}
+
+/* Texte de pourcentage */
+.skill-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: var(--clr-lenses-200);
+}
+
+/* Projets */
+.card-img-top {
+    height: 200px; 
+    width: 100%; 
+    object-fit: contain; 
+    object-position: center; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+/* Contact */
+.contact-info {
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: var(--clr-primary);
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: var(--clr-lenses-200);
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.contact-info p strong {
+    color: var(--clr-oak-100);
+    font-weight: bold;
+}
+
+.contact-info a {
+    color: var(--clr-oak-200);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--clr-oak-300);
+}
+
+
+.btn-primary {
+    background-color: var(--clr-primary);  
+    border: none;
+    color: white; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-secondary);  
+    color: white; 
+}
